@@ -1,8 +1,10 @@
-project-directories -create -proj . -all-commmons -ignore-owner
-project-directories -create -proj . -all-commmons -ignore-owner -ignore-existing
-
 project-directories -create ramanvai -proj . -all-commmons -ignore-owner
 project-directories -create ramanvai -proj . -all-commmons -ignore-owner -ignore-existing
+
+#Need to test
+
+project-directories -create -proj . -all-commmons -ignore-owner
+project-directories -create -proj . -all-commmons -ignore-owner -ignore-existing
 
 air ls /school/departments/physics/electricty
 air -branch SUBJECTS_DEV ls /school/departments/physics/electricty
@@ -108,7 +110,7 @@ air ls -lg /abinitio/tags/term_test_01_tag
 
 air tag ls -o /projects/school/departments/physics/electricty/mp/faraday_law.mp
 
-
+hive-to-dml -hive hive_db_name hive_tbl_name
 
 
 
