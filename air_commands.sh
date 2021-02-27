@@ -1,10 +1,10 @@
-project-directories -create ramanvai -proj . -all-commmons -ignore-owner
-project-directories -create ramanvai -proj . -all-commmons -ignore-owner -ignore-existing
+project-directories -create ramanvai -proj . -all-commons -ignore-owner
+project-directories -create ramanvai -proj . -all-commons -ignore-owner -ignore-existing
 
 #Need to test
 
-project-directories -create -proj . -all-commmons -ignore-owner
-project-directories -create -proj . -all-commmons -ignore-owner -ignore-existing
+project-directories -create -proj . -all-commons -ignore-owner
+project-directories -create -proj . -all-commons -ignore-owner -ignore-existing
 
 air ls /school/departments/physics/electricty
 air -branch SUBJECTS_DEV ls /school/departments/physics/electricty
@@ -41,6 +41,8 @@ air object cat /school/departments/physics/electricty/dml/faraday_law.dml
 
 air object versions /school/departments/physics/electricty/dml/faraday_law.dml
 
+air object changed /school/departments/physics/electricty/dml/faraday_law.dml -version1 100001 -version2 100002 -diff
+
 air project add /school/departments/physics/electricty/ mp/pascal_law.mp
 
 air project export /projects/school/departments/physics/electricty -basedir /home/tutor/sandboxes/school/departments/physics/electricty -common /projects /home/tutor/sandboxes -export-commons -quiet
@@ -63,6 +65,7 @@ air project modify /projects/school/departments/physics/electricty -extension "*
 #air promote save term_test_01_tag.save term_test_01_tag -comment "Save of term_test_01_tag"
 #air object save abcd.save /projects/lesson -external /projects/common
 air save term_test_01_tag.save -from-tag term_test_01_tag
+air load save term_test_01_tag.save -table-of-contents
 air load save term_test_01_tag.save
 #air load term_test_01_tag.save -relocate /project/dev /project/sit
 
@@ -92,6 +95,7 @@ air sandbox eval air sandbox run /home/tutor/sandboxes/school/departments/physic
 
 air tag create -exact term_test_01_tag file /home/tutor/file_with_object_names.txt
 air tag create term_test_01_tag /projects/school/departments/physics/electricty/mp/faraday_law.mp
+air tag create term_test_01_tag /projects/school/departments/physics/electricty -comment "some comment" -project-only
 air tag create term_test_01_tag -dry-run
 air tag create term_test_01_tag
 
@@ -112,5 +116,7 @@ air tag ls -o /projects/school/departments/physics/electricty/mp/faraday_law.mp
 
 hive-to-dml -hive hive_db_name hive_tbl_name
 
+air show-permissions /projects/school/departments
 
-
+ab-key show
+abkcctl status /apps/abinitio/keyserver/abkc

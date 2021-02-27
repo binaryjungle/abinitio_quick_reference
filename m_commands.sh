@@ -1,3 +1,5 @@
+build_mfs -data-areas /home/tutor/ai_paths/mfs_4way_partitions -mfs-mount /home/tutor/ai_paths -mfs-name mfs_4way -mfs-depth 4
+
 m_cleanup_rm /apps/abinitio/var/file_name.dat
 m_cleanup_rm -j /apps/abinitio/var/*
 
